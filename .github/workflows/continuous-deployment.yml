@@ -34,12 +34,18 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: List files after build
+        run: ls -R
   deploy:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: List files
+        run: ls
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
