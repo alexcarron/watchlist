@@ -10,7 +10,7 @@ import RecentlyAddedPage from "./components/RecentlyAddedPage/RecentlyAddedPage.
 
 createRoot(document.getElementById("root")).render(
 	<MediaListProvider>
-		<BrowserRouter>
+		<BrowserRouter basename="/watchlist">
 			<Routes>
 				<Route path="/" element={<MainPage />}></Route>
 				<Route path="/highest-rated" element={<HighestRatedPage />}></Route>
