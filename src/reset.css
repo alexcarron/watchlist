@@ -14,6 +14,8 @@
   /* Ensure font family is same as rest of the content */
   font-family: inherit;
   font-size: inherit;
+
+	color: inherit;
 }
 
 /* Override display for semantic elements for all browsers */

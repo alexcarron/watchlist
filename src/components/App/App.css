@@ -1,0 +1,50 @@
+div.App {
+	display: flex;
+	flex-direction: column;
+
+	gap: var(--large-spacing);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+
+	gap: var(--medium-spacing);
+}
+
+section.add-media-form {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items:  flex-start;
+
+	gap: var(--small-spacing);
+}
+
+section.watchlist {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items:  flex-start;
+
+	/* Span full width */
+	width: 100%;
+
+	border-top: 2px solid var(--secondary-background-color);
+}
+
+article.media-entry {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items:  flex-start;
+
+	gap: var(--tiny-spacing);
+	padding: var(--tiny-spacing) 0;
+
+	/* Span full width */
+	width: 100%;
+
+	/* Borders between media entries */
+	border-bottom: 2px solid var(--secondary-background-color);
+}

@@ -1,0 +1,60 @@
+:root {
+	--background-color: #ffffff;
+	--secondary-background-color: #f1f1f1;
+
+	--text-color: #242424;
+	--secondary-text-color: #666666;
+
+	/* Spacings */
+	--large-spacing: 1.5rem;
+	--medium-spacing: 1rem;
+	--small-spacing: 0.5rem;
+	--tiny-spacing: 0.25rem;
+
+	/* Font Sizes */
+	--large-font-size: 2rem;
+	--medium-font-size: 1rem;
+	--small-font-size: 0.5rem;
+	--tiny-font-size: 0.25rem;
+
+	font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+	color-scheme: light dark;
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+
+body {
+	margin: 1rem;
+}
+
+h1 {
+	font-size: var(--large-font-size);
+}
+
+input {
+	font-size: var(--medium-font-size);
+
+	border: solid 1px var(--text-color);
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	color: var(--text-color);
+}
+
+button {
+	font-size: var(--medium-font-size);
+
+	border: solid 1px var(--text-color);
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+
+	transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+	background-color: var(--secondary-background-color);
+}
+
+button:active {
+	background-color: var(--text-color);
+	color: var(--background-color);
+}
