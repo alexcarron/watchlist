@@ -1,6 +1,6 @@
 article.media-entry {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr var(--medium-font-size);
 
 	gap: var(--tiny-spacing);
 	padding: var(--tiny-spacing) 0;

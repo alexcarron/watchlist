@@ -31,6 +31,22 @@ const addMedia = (mediaList, { title, rating }) => {
 	return [...mediaList, { title, dateAdded, rating }];
 };
 
+const removeMedia = (mediaList, { title }) => {
+	// Check if title exists
+	title = title.trim();
+
+	if (title === "") {
+		return mediaList;
+	}
+
+	// Check if title exists
+	if (!mediaList.some(mediaEntry => mediaEntry.title.toLowerCase() === title.toLowerCase())) {
+		return mediaList;
+	}
+
+	return mediaList.filter(mediaEntry => mediaEntry.title.toLowerCase() !== title.toLowerCase());
+}
+
 
 const MediaListProvider = ({ children }) => {
 	const [mediaList, updateMediaList] = useReducer(
@@ -40,6 +56,8 @@ const MediaListProvider = ({ children }) => {
 			switch (action) {
 				case MediaListAction.ADD_MEDIA:
 					return addMedia(mediaList, updateInput);
+				case MediaListAction.REMOVE_MEDIA:
+					return removeMedia(mediaList, updateInput);
 				default:
 					return mediaList;
 			}
