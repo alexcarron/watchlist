@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import MediaEntry from "../MediaEntry/MediaEntry";
 import "./Watchlist.css";
-import { MediaListContext } from "../../context/MediaListContext";
+import MediaListContext from "../../context/MediaListContext";
 
 function Watchlist() {
 	const {mediaList} = useContext(MediaListContext);

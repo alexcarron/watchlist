@@ -1,9 +1,10 @@
 import { useCallback, useContext } from "react";
-import { MediaListContext } from "../../context/MediaListContext";
 import "./AddMediaForm.css";
+import MediaListContext from "../../context/MediaListContext";
+import MediaListAction from "../../context/MediaListAction";
 
 function AddMediaForm() {
-	const {addMedia} = useContext(MediaListContext);
+	const {updateMediaList} = useContext(MediaListContext);
 
 	const getTitleInputValue = useCallback(
 		() => document.getElementById("titleInput").value,
@@ -12,12 +13,15 @@ function AddMediaForm() {
 
 	const addCurrentInputToMediaList = useCallback(() => {
 		try {
-			addMedia({title: getTitleInputValue()});
+			updateMediaList({
+				action: MediaListAction.ADD_MEDIA,
+				title: getTitleInputValue()
+			});
 		}
 		catch (error) {
 			alert(error.message);
 		}
-	}, [addMedia, getTitleInputValue]);
+	}, [updateMediaList, getTitleInputValue]);
 
 	return <section className="add-media-form">
 		<input

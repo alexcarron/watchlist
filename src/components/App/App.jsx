@@ -1,4 +1,4 @@
-import { MediaListProvider } from "../../context/MediaListContext";
+import MediaListProvider from "../../context/MediaListProvider";
 import AddMediaForm from "../AddMediaForm/AddMediaForm";
 import Watchlist from "../Watchlist/Watchlist";
 import "./App.css";
