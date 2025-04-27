@@ -1,11 +1,11 @@
 name: Continuous Integration and Deployment
 
-run-name: ${{ github.actor }} is running the continuous integration workflow
+run-name: ${{ github.actor }} is running the CI/CD workflow
 
 on: [push]
 
 jobs:
-  lint:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
