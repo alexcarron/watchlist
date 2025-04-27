@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import MediaListContext from "./MediaListContext";
 import MediaListAction from "./MediaListAction";
 
@@ -102,32 +102,41 @@ const updateMediaTitle = (mediaList, { title, newTitle }) => {
 	})
 };
 
+const mediaListReducer = (mediaList, updateInput) => {
+	const action = updateInput.action;
+
+	switch (action) {
+		case MediaListAction.ADD_MEDIA:
+			return addMedia(mediaList, updateInput);
+		case MediaListAction.REMOVE_MEDIA:
+			return removeMedia(mediaList, updateInput);
+		case MediaListAction.UPDATE_MEDIA: {
+			if (updateInput.rating !== undefined) {
+				return updateMediaRating(mediaList, updateInput);
+			}
+			if (updateInput.newTitle !== undefined) {
+				return updateMediaTitle(mediaList, updateInput);
+			}
+			break;
+		}
+		default:
+			return mediaList;
+	}
+};
 
 const MediaListProvider = ({ children }) => {
-	const [mediaList, updateMediaList] = useReducer(
-		(mediaList, updateInput) => {
-			const action = updateInput.action;
+	const storedMediaList =
+		JSON.parse(localStorage.getItem("mediaList")) || [];
 
-			switch (action) {
-				case MediaListAction.ADD_MEDIA:
-					return addMedia(mediaList, updateInput);
-				case MediaListAction.REMOVE_MEDIA:
-					return removeMedia(mediaList, updateInput);
-				case MediaListAction.UPDATE_MEDIA: {
-					if (updateInput.rating) {
-						return updateMediaRating(mediaList, updateInput);
-					}
-					if (updateInput.newTitle) {
-						return updateMediaTitle(mediaList, updateInput);
-					}
-					break;
-				}
-				default:
-					return mediaList;
-			}
-		},
-		[]
-	);
+	const [mediaList, updateMediaList] = useReducer(mediaListReducer, storedMediaList);
+
+	useEffect(() => {
+		localStorage.setItem(
+			"mediaList",
+			JSON.stringify(mediaList)
+		);
+	}, [mediaList]);
+
 	return (
 		<MediaListContext.Provider value={{
 			mediaList,

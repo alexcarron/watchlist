@@ -15,6 +15,7 @@ function MediaEntry(props) {
 			<h2
 				className="media-title"
 				contentEditable
+				suppressContentEditableWarning={true}
 				onBlur={e =>
 					updateMediaList({
 						action: MediaListAction.UPDATE_MEDIA,
@@ -26,6 +27,7 @@ function MediaEntry(props) {
 			<p
 				className="media-rating"
 				contentEditable
+				suppressContentEditableWarning={true}
 				onBlur={e => {
 					const ratingText = e.target.innerText;
 
@@ -38,10 +40,12 @@ function MediaEntry(props) {
 						return;
 					}
 
+					const ratingNum = parseFloat(ratingText);
+
 					updateMediaList({
 						action: MediaListAction.UPDATE_MEDIA,
 						title: title,
-						rating: Number(ratingText),
+						rating: ratingNum,
 					})
 				}}
 			>{rating}</p>
