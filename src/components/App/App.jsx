@@ -1,3 +1,5 @@
+import AddMediaForm from "../AddMediaForm/AddMediaForm";
+import Watchlist from "../Watchlist/Watchlist";
 import "./App.css";
 
 function App() {
@@ -6,25 +8,8 @@ function App() {
 			<h1>Watchlist</h1>
 		</header>
 		<main>
-			<section class="add-media-form">
-				<input
-					type="text"
-					name="title"
-					id="titleInput"
-					placeholder="Title of Media"
-				/>
-				<button type="submit">Add</button>
-			</section>
-			<section class="watchlist">
-				<article class="media-entry">
-					<h2 class="media-title">Title</h2>
-					<p class="media-date-added">Apr 27 2025</p>
-				</article>
-				<article class="media-entry">
-					<h2 class="media-title">Title</h2>
-					<p class="media-date-added">Apr 27 2025</p>
-				</article>
-			</section>
+			<AddMediaForm />
+			<Watchlist />
 		</main>
 	</div>;
 }
