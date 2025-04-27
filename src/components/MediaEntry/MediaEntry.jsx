@@ -12,8 +12,39 @@ function MediaEntry(props) {
 
 	return (<>
 		<article className="media-entry">
-			<h2 className="media-title">{title}</h2>
-			<p className="media-rating">{rating}</p>
+			<h2
+				className="media-title"
+				contentEditable
+				onBlur={e =>
+					updateMediaList({
+						action: MediaListAction.UPDATE_MEDIA,
+						title: title,
+						newTitle: e.target.innerText
+					})
+				}
+			>{title}</h2>
+			<p
+				className="media-rating"
+				contentEditable
+				onBlur={e => {
+					const ratingText = e.target.innerText;
+
+					if (
+						isNaN(ratingText) ||
+						ratingText < 0 ||
+						ratingText > 10
+					) {
+						e.target.innerText = rating;
+						return;
+					}
+
+					updateMediaList({
+						action: MediaListAction.UPDATE_MEDIA,
+						title: title,
+						rating: Number(ratingText),
+					})
+				}}
+			>{rating}</p>
 			<p className="media-date-added">{DateFormatter.toShortDate(dateAdded)}</p>
 			<button
 				className="remove-media icon-button"
