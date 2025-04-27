@@ -36,10 +36,6 @@ To run the application locally, follow these steps:
 3. Start the development server using `npm run dev` or `yarn dev`
 4. Open your web browser and navigate to `http://localhost:3000`
 
-## Contributing
-
-Contributions are welcome! If you have any ideas or bug fixes, please submit a pull request.
-
 ## License
 
 This project is licensed under the MIT License.
