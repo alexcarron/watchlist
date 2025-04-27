@@ -5,7 +5,7 @@ run-name: ${{ github.actor }} is running the CI workflow
 on: [push, workflow_call]
 
 jobs:
-  build-and-test:
+  lint-and-prettier:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
