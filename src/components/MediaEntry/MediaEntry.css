@@ -2,6 +2,7 @@ article.media-entry {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr var(--medium-font-size);
 
+
 	gap: var(--tiny-spacing);
 	padding: var(--tiny-spacing) 0;
 
@@ -10,4 +11,9 @@ article.media-entry {
 
 	/* Borders between media entries */
 	border-bottom: 2px solid var(--secondary-background-color);
+}
+
+/* Align cells to top */
+article.media-entry > * {
+	vertical-align: top;
 }
