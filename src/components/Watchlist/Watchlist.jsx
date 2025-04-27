@@ -7,8 +7,16 @@ function Watchlist({ sortedBy }) {
 	const {mediaList} = useContext(MediaListContext);
 	const sortedMediaList = [...mediaList];
 
+	console.log({sortedBy})
+
 	if (sortedBy === "rating") {
 		sortedMediaList.sort((a, b) => b.rating - a.rating);
+	}
+	else if (sortedBy === "date added") {
+		sortedMediaList.sort((a, b) =>
+			new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime()
+		);
+		console.log(sortedMediaList)
 	}
 
 	return <section className="watchlist">
