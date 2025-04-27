@@ -2,7 +2,7 @@ article.media-entry {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	align-items:  flex-start;
+	align-items: flex-start;
 
 	gap: var(--tiny-spacing);
 	padding: var(--tiny-spacing) 0;

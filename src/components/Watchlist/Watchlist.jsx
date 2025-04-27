@@ -1,15 +1,23 @@
+import { useContext } from "react";
 import MediaEntry from "../MediaEntry/MediaEntry";
 import "./Watchlist.css";
+import { MediaListContext } from "../../context/MediaListContext";
 
 function Watchlist() {
-	return <section class="watchlist">
-		<MediaEntry title="Title of Media" dateAdded="Date Added"></MediaEntry>
-		<MediaEntry title="Title of Media" dateAdded="Date Added"></MediaEntry>
-		<MediaEntry title="Title of Media" dateAdded="Date Added"></MediaEntry>
-		<MediaEntry title="Title of Media" dateAdded="Date Added"></MediaEntry>
-		<MediaEntry title="Title of Media" dateAdded="Date Added"></MediaEntry>
-		<MediaEntry title="Title of Media" dateAdded="Date Added"></MediaEntry>
-		<MediaEntry title="Title of Media" dateAdded="Date Added"></MediaEntry>
+	const {mediaList} = useContext(MediaListContext);
+
+	return <section className="watchlist">
+		<article className="watchlist-header">
+			<p>Title</p>
+			<p>Date Added</p>
+		</article>
+		{mediaList.map(mediaEntry =>
+			<MediaEntry
+				key={mediaEntry.title}
+				title={mediaEntry.title}
+				dateAdded={mediaEntry.dateAdded}
+			/>
+		)}
 	</section>;
 }
 

@@ -6,6 +6,20 @@ section.watchlist {
 
 	/* Span full width */
 	width: 100%;
+}
 
-	border-top: 2px solid var(--secondary-background-color);
+article.watchlist-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+
+	gap: var(--tiny-spacing);
+	padding: var(--tiny-spacing) 0;
+
+	width: 100%;
+
+	font-weight: 900;
+
+	border-bottom: 2px solid var(--secondary-text-color);
 }
