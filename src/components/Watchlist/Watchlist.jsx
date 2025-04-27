@@ -9,13 +9,13 @@ function Watchlist() {
 	return <section className="watchlist">
 		<article className="watchlist-header">
 			<p>Title</p>
+			<p>Rating</p>
 			<p>Date Added</p>
 		</article>
 		{mediaList.map(mediaEntry =>
 			<MediaEntry
 				key={mediaEntry.title}
-				title={mediaEntry.title}
-				dateAdded={mediaEntry.dateAdded}
+				mediaEntry={mediaEntry}
 			/>
 		)}
 	</section>;

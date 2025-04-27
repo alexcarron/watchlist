@@ -3,7 +3,7 @@ import MediaListContext from "./MediaListContext";
 import MediaListAction from "./MediaListAction";
 
 
-const addMedia = (mediaList, { title }) => {
+const addMedia = (mediaList, { title, rating }) => {
 	title = title.trim();
 
 	// Check if title exists
@@ -16,8 +16,19 @@ const addMedia = (mediaList, { title }) => {
 		return mediaList;
 	}
 
+	// Check if rating exists and is a number
+	if (!rating || isNaN(rating)) {
+		return mediaList;
+	}
+
+	// Check if rating is between 0 and 10
+	if (rating < 0 || rating > 10) {
+		return mediaList;
+	}
+
+
 	const dateAdded = new Date();
-	return [...mediaList, { title, dateAdded }];
+	return [...mediaList, { title, dateAdded, rating }];
 };
 
 

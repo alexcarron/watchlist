@@ -11,17 +11,23 @@ function AddMediaForm() {
 		[]
 	);
 
+	const getRatingInputValue = useCallback(
+		() => document.getElementById("ratingInput").value,
+		[]
+	);
+
 	const addCurrentInputToMediaList = useCallback(() => {
 		try {
 			updateMediaList({
 				action: MediaListAction.ADD_MEDIA,
-				title: getTitleInputValue()
+				title: getTitleInputValue(),
+				rating: getRatingInputValue(),
 			});
 		}
 		catch (error) {
 			alert(error.message);
 		}
-	}, [updateMediaList, getTitleInputValue]);
+	}, [updateMediaList, getTitleInputValue, getRatingInputValue]);
 
 	return <section className="add-media-form">
 		<input
@@ -29,6 +35,12 @@ function AddMediaForm() {
 			name="title"
 			id="titleInput"
 			placeholder="Title of Media"
+		/>
+		<input
+			type="number"
+			name="rating"
+			id="ratingInput"
+			placeholder="Rating (0-10)"
 		/>
 		<button type="submit" onClick={addCurrentInputToMediaList}>
 			Add

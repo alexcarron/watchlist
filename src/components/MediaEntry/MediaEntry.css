@@ -1,8 +1,6 @@
 article.media-entry {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: flex-start;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 
 	gap: var(--tiny-spacing);
 	padding: var(--tiny-spacing) 0;
