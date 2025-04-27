@@ -1,12 +1,49 @@
-# React + Vite
+# Watchlist
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for managing a personal watchlist of media.
 
-Currently, two official plugins are available:
+This project is hosted on GitHub Pages. You can access the live application at https://alexcarron.github.io/watchlist/.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project provides a simple and intuitive way to keep track of movies, TV shows, and other media that you want to watch. It allows you to add, remove, and update media entries, and provides a sorted list of your watchlist.
+
+## Features
+
+* Add media entries with title, rating, and date added
+* Remove media entries from the watchlist
+* Update media entries with new title, rating, or date added
+* See a sorted list of watchlist by rating or date added through rotues: `/highest-rated` and `/recently-added`
+* Responsive design for desktop and mobile devices
+
+## Technologies Used
+
+* React
+* React Router
+* React Context API
+* JavaScript
+* CSS
+* HTML
+* Vite
+
+## Running Locally
+
+To run the application locally, follow these steps:
+
+1. Clone the repository to your local machine
+2. Install the dependencies using `npm install` or `yarn install`
+3. Start the development server using `npm run dev` or `yarn dev`
+4. Open your web browser and navigate to `http://localhost:3000`
+
+## Contributing
+
+Contributions are welcome! If you have any ideas or bug fixes, please submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+This project was created using the Vite template for React.
